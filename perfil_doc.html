@@ -392,8 +392,8 @@
 
                     <div class="calendar__info">
                         <div class="calendar__prev" id="prev-month">&#9664;</div>
-                        <div class="calendar__month" id="month">Agosto</div>
-                        <div class="calendar__year" id="year">2020</div>
+                        <div class="calendar__month" id="month"></div>
+                        <div class="calendar__year" id="year"></div>
                         <div class="calendar__next" id="next-month">&#9654;</div>
                     </div>
 
@@ -516,8 +516,24 @@
     <!--Script Calendario-->
     <script>
         let monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto',
-            'Septiembre', 'Noviembre', 'Diciembre'
+            'Septiembre', 'octubre', 'Noviembre', 'Diciembre'
         ];
+
+        let currentDate = new Date();
+        let currentDay = currentDate.getDate();
+        let monthNumber = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+
+
+        let dates = document.getElementById('dates');
+        let month = document.getElementById('month');
+        let year = document.getElementById('year');
+
+        let prevMonthDom = document.getElementById('prev-month');
+        let nextMonthDom = document.getElementById('next-month');
+
+        month.textContent = monthNames[monthNumber];
+        year.textContent = currentYear.toString();
     </script>
 
 
