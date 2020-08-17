@@ -2247,7 +2247,13 @@ body .typed-cursor.typed-cursor--blink.typed-fade-out {
     text-transform: uppercase;
 }
 
-.calendar__prev .calendar__next {
+.calendar__prev {
+    color: red;
+    cursor: pointer;
+    font-size: 1.4em;
+}
+
+.calendar__next {
     color: red;
     cursor: pointer;
     font-size: 1.4em;
