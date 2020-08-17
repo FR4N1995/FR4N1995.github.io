@@ -544,8 +544,8 @@
 
         /*escribir los meses*/
         function writemonth(month) {
-            for (let i = 1; i < getTotalDays(month); i++) {
-                dates.innerHTML += `<div class="calendar__date calendar__item">${i}</div>`
+            for (let i = 1; i <= getTotalDays(month); i++) {
+                dates.innerHTML += `<div class="calendar__date calendar__item">${i}</div>`;
             }
         }
         /*para saber total de dias saber si son 29 29 o 30*/
