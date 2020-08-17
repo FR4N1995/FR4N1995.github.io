@@ -2273,6 +2273,12 @@ body .typed-cursor.typed-cursor--blink.typed-fade-out {
     grid-gap: 10px;
 }
 
+.calendar__dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+}
+
 .calendar__month,
 .calendar__year {
     padding: .5em 1em;
