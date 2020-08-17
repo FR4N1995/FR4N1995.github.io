@@ -552,10 +552,10 @@
 
             for (let i = 1; i <= getTotalDays(month); i++) {
                 if (i == currentDay) {
-                    dates.innerHTML += ` <div class="calendar__date calendar__item calendar__today"  href="#sign-in-dialog">${i}</div> `;
+                    dates.innerHTML += ` <a class="calendar__date calendar__item calendar__today"  href="#sign-in-dialog">${i}</a> `;
 
                 } else {
-                    dates.innerHTML += ` <div class="calendar__date calendar__item"  href="#sign-in-dialog">${i}</div> `;
+                    dates.innerHTML += ` <a class="calendar__date calendar__item"  href="#sign-in-dialog">${i}</a> `;
 
                 }
             }
