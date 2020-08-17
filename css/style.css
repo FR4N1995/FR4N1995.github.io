@@ -2277,6 +2277,7 @@ body .typed-cursor.typed-cursor--blink.typed-fade-out {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
+    cursor: pointer;
 }
 
 .calendar__today {
