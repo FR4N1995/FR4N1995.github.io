@@ -545,6 +545,11 @@
 
         /*escribir los meses*/
         function writemonth(month) {
+            for (let i = startDay(); i > 0; i--) {
+                dates.innerHTML += ` <div class="calendar__date calendar__item calendar__lastdays">${getTotalDays(monthNumber-1)-(i-1)}</div> `;
+
+            }
+
             for (let i = 1; i <= getTotalDays(month); i++) {
                 if (i == currentDay) {
                     dates.innerHTML += ` <div class="calendar__date calendar__item calendar__today">${i}</div> `;
@@ -602,6 +607,8 @@
             currentDate.setFullYear(currentYear, monthNumber, currentDay);
             month.textContent = monthNames[monthNumber];
             year.textContent = currentYear.toString();
+            dates.textContent = '';
+            writemonth(monthNumber);
         }
     </script>
 

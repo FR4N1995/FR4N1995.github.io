@@ -2288,6 +2288,10 @@ body .typed-cursor.typed-cursor--blink.typed-fade-out {
     margin: auto;
 }
 
+.calendar__lastdays {
+    opacity: .3;
+}
+
 .calendar__month,
 .calendar__year {
     padding: .5em 1em;
