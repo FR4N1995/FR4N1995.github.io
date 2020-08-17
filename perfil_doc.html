@@ -532,8 +532,60 @@
         let prevMonthDom = document.getElementById('prev-month');
         let nextMonthDom = document.getElementById('next-month');
 
+        /*Aqui es donde hago que se muestre el año y el mes en el html*/
         month.textContent = monthNames[monthNumber];
         year.textContent = currentYear.toString();
+
+        /**/
+        prevMonthDom.addEventListener('click', () => lastMonth());
+        prevMonthDom.addEventListener('click', () => nextMonth());
+
+
+        /*escribir los meses*/
+        function writemonth(month) {
+
+        }
+        /*para saber total de dias saber si son 29 29 o 30*/
+        function getTotalDays(month) {
+
+        }
+        /*saber si el año es bisiesto*/
+        function isLeap() {
+            return (currentYear % 100 !== 0) && (currentYear % 4 === 0) || (currentYear % 400 === 0)
+
+        }
+        /*saber el dia que comienza el dia*/
+        function startDay() {
+            let start = new Date(currentYear, monthNumber, 1);
+            return ((start.getDay() - 1) === -1) ? 6 : start.getDay() - 1;
+        }
+        /*para dibujar el mes anterior*/
+        function lastMonth() {
+            if (monthNumber !== 0) {
+                monthNumber--;
+            } else {
+                monthNumber = 11;
+                currentYear--;
+            }
+            setNewDate();
+        }
+        /*para dibujar el mes siguiente*/
+        function nextMonth() {
+            if (monthNumber !== 11) {
+                monthNumber++;
+            } else {
+                monthNumber = 0;
+                currentYear++;
+            }
+            setNewDate();
+
+        }
+        /*establece la nueva fecha cuando meniemos el calendario*/
+        function setNewDate() {
+            currentDate.setFullYear(currentYear, monthNumber, currentDay);
+            month.textContent = monthNames[monthNumber];
+            year.textContent = currentYear.toString();
+        }
     </script>
 
 
