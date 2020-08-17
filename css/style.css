@@ -2239,6 +2239,29 @@ body .typed-cursor.typed-cursor--blink.typed-fade-out {
     padding: .5em 0;
 }
 
+.calendar__info {
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.calendar__prev,
+.calendar__next {
+    color: red;
+    cursor: pointer;
+    font-size: 1.4em;
+}
+
+.calendar__prev {
+    margin-right: auto;
+}
+
+.calendar__next {
+    margin-left: auto;
+}
+
 
 /* Main Search Container
 ------------------------------------- */
