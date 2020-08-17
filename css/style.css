@@ -2267,6 +2267,22 @@ body .typed-cursor.typed-cursor--blink.typed-fade-out {
     margin-left: auto;
 }
 
+.calendar__week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+}
+
+.calendar__month,
+.calendar__year {
+    padding: .5em 1em;
+}
+
+.calendar__item {
+    text-align: center;
+    line-height: 2;
+}
+
 
 /* Main Search Container
 ------------------------------------- */
