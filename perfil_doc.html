@@ -388,6 +388,7 @@
 
             <div class="fs-inner-container map-fixed">
                 <h1 class="text-center">Calendario</h1>
+                <h2 class="text-center">Agenda tu Cita</h2>
                 <div class="calendar">
 
                     <div class="calendar__info">
@@ -543,11 +544,20 @@
 
         /*escribir los meses*/
         function writemonth(month) {
-
+            for (let i = 1; i < getTotalDays(month); i++) {
+                dates.innerHTML += `<div class="calendar__date calendar__item">${i}</div>`
+            }
         }
         /*para saber total de dias saber si son 29 29 o 30*/
         function getTotalDays(month) {
-
+            if (month === -1) month = 11;
+            if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
+                return 31;
+            } else if (month == 3 || month == 5 || month == 8 || month == 10) {
+                return 30;
+            } else {
+                return isLeap() ? 29 : 28;
+            }
         }
         /*saber si el año es bisiesto*/
         function isLeap() {
