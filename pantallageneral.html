@@ -178,25 +178,18 @@
                         </div>
 
                         <!--Tabs -->
-                        <div class="sign-in-form style-1">
-
-                            <div style="padding-bottom: 2rem;">
-                                <button class="button fullwidth" style="background-color: rgb(0, 94, 175) !important;">Paypal</button>
-
-                            </div>
-                            <input type="text" name="" id="">
-                            <label for=""></label>
-                            <div style="padding-bottom: 2rem;">
-                                <button class="button fullwidth">Tarjeta D/C</button>
-
-                            </div>
-                            <div>
-                                <button class="button fullwidth" style="background-color: rgb(255, 184, 53) !important;">Mercado Pago</button>
-
-                            </div>
-
-
-
+                        <div class="boxed-widget opening-hours margin-top-35">
+                            <div class="listing-badge now-open">Visitanos</div>
+                            <h3><i class="sl sl-icon-clock"></i> Horarios</h3>
+                            <ul>
+                                <li>Lunes <span>9 AM - 5 PM</span></li>
+                                <li>Martes <span>9 AM - 5 PM</span></li>
+                                <li>Miercoles <span>9 AM - 5 PM</span></li>
+                                <li>Jueves <span>9 AM - 5 PM</span></li>
+                                <li>Viernes <span>9 AM - 5 PM</span></li>
+                                <li>Sabado <span>9 AM - 3 PM</span></li>
+                                <li>Domingo <span>Closed</span></li>
+                            </ul>
                         </div>
                     </div>
 
@@ -596,16 +589,20 @@
 
                             <!-- Listing Item -->
                             <div class="fw-carousel-item">
-                                <a href="" class="listing-item-container compact">
+                                <a href="listings-single-page.html" class="listing-item-container">
                                     <div class="listing-item">
-                                        <img src="images/listing-item-05.jpg" alt="">
-                                        <div class="listing-item-content">
+                                        <img src="images/listing-item-04.jpg" alt="">
 
-                                            <h3>Nombre del producto</h3>
-                                            <span>Direccion</span>
+                                        <div class="listing-badge now-closed">Producto</div>
+
+                                        <div class="listing-item-content">
+                                            <!--<span class="tag">Eat & Drink</span>-->
+                                            <h3>Nombre <i class="verified-icon"></i></h3>
+                                            <span>Ubicacion</span>
                                         </div>
                                         <span class="like-icon"></span>
                                     </div>
+
                                 </a>
                             </div>
                             <!-- Listing Item / End -->
@@ -766,7 +763,7 @@
 
 
                 <div id="listing-reviews" class="listing-section">
-                    <h3 class="listing-desc-headline margin-top-75 margin-bottom-20">Reviews <span>(12)</span></h3>
+                    <h3 class="listing-desc-headline margin-top-75 margin-bottom-20">Comentarios <span>(12)</span></h3>
 
                     <!-- Rating Overview -->
                     <div class="rating-overview">
@@ -1053,7 +1050,7 @@
         nextMonthDom.addEventListener('click', () => nextMonth());
 
         writemonth(monthNumber);
-        console.log(currentDate);
+        console.log(currentDay);
         console.log(monthNumber);
         console.log(currentYear);
         /*escribir los meses*/
