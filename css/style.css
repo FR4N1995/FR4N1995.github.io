@@ -2232,8 +2232,10 @@ body .typed-cursor.typed-cursor--blink.typed-fade-out {
 /* Estilos calendario */
 
 .calendar {
+    /*
     width: 80%;
     max-width: 600px;
+    */
     margin: 1em auto;
     padding: .5em 0;
 }
