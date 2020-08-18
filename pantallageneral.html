@@ -174,7 +174,7 @@
                     <div id="modal" class="sign-in-dialog zoom-anim-dialog mfp-hide ">
 
                         <div class="small-dialog-header">
-                            <h3>Formas de pagoooooooo</h3>
+                            <h3>Agenda tu cita</h3>
                         </div>
 
                         <!--Tabs -->
@@ -1053,7 +1053,9 @@
         nextMonthDom.addEventListener('click', () => nextMonth());
 
         writemonth(monthNumber);
-        console.log(currentDay);
+        console.log(currentDate);
+        console.log(monthNumber);
+        console.log(currentYear);
         /*escribir los meses*/
         function writemonth(month) {
             for (let i = startDay(); i > 0; i--) {
