@@ -166,7 +166,7 @@
                     <!-- Right Side Content / End -->
                     <div class="right-side">
                         <div class="header-widget">
-                            <a href="#modal" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login sign-in-dialog"></i> Sign In</a>
+                            <a href="#modal" class="sign-in popup-with-zoom-anim sign-in-dialog"><i class="sl sl-icon-login "></i> Sign In</a>
                             <a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
                         </div>
                     </div>
@@ -1029,16 +1029,16 @@
         /*escribir los meses*/
         function writemonth(month) {
             for (let i = startDay(); i > 0; i--) {
-                dates.innerHTML += ` <a class="calendar__date calendar__item calendar__lastdays sign-in" href="#modal" >${getTotalDays(monthNumber-1)-(i-1)}</a> `;
+                dates.innerHTML += ` <a class="calendar__date calendar__item calendar__lastdays sign-in popup-with-zoom-anim sign-in-dialog" href="#modal" >${getTotalDays(monthNumber-1)-(i-1)}</a> `;
 
             }
 
             for (let i = 1; i <= getTotalDays(month); i++) {
                 if (i == currentDay) {
-                    dates.innerHTML += ` <a class="calendar__date calendar__item calendar__today sign-in"  href="#modal">${i}</a> `;
+                    dates.innerHTML += ` <a class="calendar__date calendar__item calendar__today sign-in popup-with-zoom-anim sign-in-dialog"  href="#modal">${i}</a> `;
 
                 } else {
-                    dates.innerHTML += ` <a class="calendar__date calendar__item sign-in"  href="#modal">${i}</a> `;
+                    dates.innerHTML += ` <a class="calendar__date calendar__item sign-in popup-with-zoom-anim sign-in-dialog"  href="#modal">${i}</a> `;
 
                 }
             }
