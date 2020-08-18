@@ -2123,8 +2123,10 @@ em.mm-counter+a.mm-fullsubopen+span {
     position: relative;
     width: auto;
     color: #fff;
-    background-color: #66676b;
+    /*
+     background-color: #66676b;
     box-shadow: 0 2px 8px rgb(102, 103, 107, 0.2);
+    */
 }
 
 
