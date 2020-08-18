@@ -166,11 +166,39 @@
                     <!-- Right Side Content / End -->
                     <div class="right-side">
                         <div class="header-widget">
-                            <a href="#modal" class="sign-in popup-with-zoom-anim sign-in-dialog"><i class="sl sl-icon-login "></i> Sign In</a>
+                            <a href="#modal" class=" sign-in popup-with-zoom-anim  "><i class="sl sl-icon-login "></i> Sign In</a>
                             <a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
                         </div>
                     </div>
                     <!-- Right Side Content / End -->
+                    <div id="modal" class="sign-in-dialog zoom-anim-dialog mfp-hide ">
+
+                        <div class="small-dialog-header">
+                            <h3>Formas de pagoooooooo</h3>
+                        </div>
+
+                        <!--Tabs -->
+                        <div class="sign-in-form style-1">
+
+                            <div style="padding-bottom: 2rem;">
+                                <button class="button fullwidth" style="background-color: rgb(0, 94, 175) !important;">Paypal</button>
+
+                            </div>
+                            <input type="text" name="" id="">
+                            <label for=""></label>
+                            <div style="padding-bottom: 2rem;">
+                                <button class="button fullwidth">Tarjeta D/C</button>
+
+                            </div>
+                            <div>
+                                <button class="button fullwidth" style="background-color: rgb(255, 184, 53) !important;">Mercado Pago</button>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
 
                     <!-- Sign In Popup -->
                     <div id="modal" class="zoom-anim-dialog mfp-hide">
@@ -1029,16 +1057,16 @@
         /*escribir los meses*/
         function writemonth(month) {
             for (let i = startDay(); i > 0; i--) {
-                dates.innerHTML += ` <a class="calendar__date calendar__item calendar__lastdays" href="#modal" >${getTotalDays(monthNumber-1)-(i-1)}</a> `;
+                dates.innerHTML += ` <a class="calendar__date calendar__item calendar__lastdays sign-in popup-with-zoom-anim  " href="#modal" >${getTotalDays(monthNumber-1)-(i-1)}</a> `;
 
             }
 
             for (let i = 1; i <= getTotalDays(month); i++) {
                 if (i == currentDay) {
-                    dates.innerHTML += ` <a class="calendar__date calendar__item calendar__today "  href="#modal">${i}</a> `;
+                    dates.innerHTML += ` <a class="calendar__date calendar__item calendar__today sign-in popup-with-zoom-anim "  href="#modal">${i}</a> `;
 
                 } else {
-                    dates.innerHTML += ` <a class="calendar__date calendar__item "  href="#modal">${i}</a> `;
+                    dates.innerHTML += ` <a class="calendar__date calendar__item sign-in popup-with-zoom-anim "  href="#modal">${i}</a> `;
 
                 }
             }
