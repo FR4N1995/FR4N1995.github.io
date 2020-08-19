@@ -171,281 +171,348 @@
                         </div>
                     </div>
                     <!-- Right Side Content / End -->
-                    <div id="modal" class="sign-in-dialog zoom-anim-dialog mfp-hide ">
+
+                    <div id="datos" class="sign-in-dialog zoom-anim-dialog mfp-hide">
 
                         <div class="small-dialog-header">
-                            <h3>Agenda tu cita</h3>
+                            <h3>Agendar cita</h3>
                         </div>
-                        <h3>selecciona alguna hora disponible</h3>
-                        <!--Tabs -->
-                        <div class="boxed-widget opening-hours margin-top-35">
-                            <div class="listing-badge now-open">Visitanos</div>
-                            <h3><i class="sl sl-icon-clock"></i> Horarios disponibles</h3>
-                            <ul>
-                                <li>Miercoles<span>8AM - 9PM</span></li>
-                                <li>Miercoles <span>10AM - 11AM</span></li>
-                                <li>Miercoles <span>12PM - 1PM</span></li>
-                                <li>no disponible <span>2 PM - 3 PM</span></li>
-                                <li>Miercoles <span>4PM - 5PM</span></li>
-                                <li>Miercoles <span>5PM - 6PM</span></li>
-                                <li>Miercoles <span>6PM - 7PM</span></li>
+                        <form id="citar" method="post" name="citar">
+                            <h3 id="">Hora de la cita:</h3>
+                            <h3 id="hora">hora</h3>
 
-                            </ul>
-                        </div>
+                            <p class="form-row form-row-wide">
+                                <label for="username">Nombre del paciente:
+                                        <i class=" im-icon-Talk-Man "></i>
+                                        <input type="text" class="input-text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingrese su nombre:" value="" maxlength="100" />
+                                        <span id="error" class="help-block"></span>
+                                    </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="password">Correo:
+                                        <i class="im-icon-Mail-Link"></i>
+                                        <input class="input-text" type="text" name="correo" id="correo" placeholder="Ingrese su Email de contacto:" maxlength="100" />
+                                        <span id="error" class="help-block"></span>
+                                    </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="password">Teléfono:
+                                        <i class="im im-icon-Lock-2"></i>
+                                        <input class="input-text" type="number" name="telefono" id="telefono" placeholder="Ingrese su número telefónico de contacto:"
+                                        max="999999999" />
+                                    </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="password">Padecimiento:
+                                        <textarea class="input-text" type="text" name="padecimiento" id="padecimiento" placeholder="Ingrese el motivo de la consulta:"></textarea>
+                                    </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="password">Seleccione la fecha:
+                                        <i class="im-icon-Calendar"></i>
+                                        <input class="input-text" placeholder="Seleccione la fecha de la cita" type="date" name="fecha" id="fecha" min="<?php echo date('d-m-y'); ?>" />
+                                    </label>
+                            </p>
+
+                            <input type="hidden" id="idEspecialista" name="idEspecialista">
+                            <input type="hidden" id="horaSeleccionada" name="horaSeleccionada">
+                            <input type="hidden" id="especialidad" name="especialidad">
+
+                            <input type="hidden" name="idUsuario" id="idUsuario" value="1">
+                            <input type="hidden" name="area" id="area" value="Profesionales">
+
+                            <div class="form-row">
+                                <!-- <input type="submit" class="button border margin-top-5" name="agendarCitaModel" value="Agendar" /> -->
+                                <input type="button" class="button border margin-top-5" name="agendarCitaModel" name="agendarCitaModel" value="Agendar" onclick="appointment_register()">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <!--modales-->
+                <div id="modal" class="sign-in-dialog zoom-anim-dialog mfp-hide ">
+
+                    <div class="small-dialog-header">
+                        <h3>Agenda tu cita</h3>
+                    </div>
+                    <h3>selecciona alguna hora disponible</h3>
+                    <!--Tabs -->
+                    <div class="boxed-widget opening-hours margin-top-35">
+                        <div class="listing-badge now-open">Visitanos</div>
+                        <h3><i class="sl sl-icon-clock"></i> Horarios disponibles</h3>
+                        <ul>
+                            <a href="#datos" class="sign-in popup-with-zoom-anim">
+                                <li>Miercoles<span>8AM - 9PM</span></li>
+                            </a>
+                            <li>Miercoles <span>10AM - 11AM</span></li>
+                            <li>Miercoles <span>12PM - 1PM</span></li>
+                            <li>no disponible <span>2 PM - 3 PM</span></li>
+                            <li>Miercoles <span>4PM - 5PM</span></li>
+                            <li>Miercoles <span>5PM - 6PM</span></li>
+                            <li>Miercoles <span>6PM - 7PM</span></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sign In Popup -->
+                <div id="modal" class="zoom-anim-dialog mfp-hide">
+
+                    <div class="small-dialog-header">
+                        <h3>Sign In</h3>
                     </div>
 
-                    <!-- Sign In Popup -->
-                    <div id="modal" class="zoom-anim-dialog mfp-hide">
+                    <!--Tabs -->
+                    <div class="sign-in-form style-1">
 
-                        <div class="small-dialog-header">
-                            <h3>Sign In</h3>
-                        </div>
+                        <ul class="tabs-nav">
+                            <li class=""><a href="#tab1">Log In</a></li>
+                            <li><a href="#tab2">Register</a></li>
+                        </ul>
 
-                        <!--Tabs -->
-                        <div class="sign-in-form style-1">
+                        <div class="tabs-container alt">
 
-                            <ul class="tabs-nav">
-                                <li class=""><a href="#tab1">Log In</a></li>
-                                <li><a href="#tab2">Register</a></li>
-                            </ul>
+                            <!-- Login -->
+                            <div class="tab-content" id="tab1" style="display: none;">
+                                <form method="post" class="login">
 
-                            <div class="tabs-container alt">
-
-                                <!-- Login -->
-                                <div class="tab-content" id="tab1" style="display: none;">
-                                    <form method="post" class="login">
-
-                                        <p class="form-row form-row-wide">
-                                            <label for="username">Username:
+                                    <p class="form-row form-row-wide">
+                                        <label for="username">Username:
 										<i class="im im-icon-Male"></i>
 										<input type="text" class="input-text" name="username" id="username" value="" />
 									</label>
-                                        </p>
+                                    </p>
 
-                                        <p class="form-row form-row-wide">
-                                            <label for="password">Password:
+                                    <p class="form-row form-row-wide">
+                                        <label for="password">Password:
 										<i class="im im-icon-Lock-2"></i>
 										<input class="input-text" type="password" name="password" id="password"/>
 									</label>
-                                            <span class="lost_password">
+                                        <span class="lost_password">
 										<a href="#" >Lost Your Password?</a>
 									</span>
-                                        </p>
+                                    </p>
 
-                                        <div class="form-row">
-                                            <input type="submit" class="button border margin-top-5" name="login" value="Login" />
-                                            <div class="checkboxes margin-top-10">
-                                                <input id="remember-me" type="checkbox" name="check">
-                                                <label for="remember-me">Remember Me</label>
-                                            </div>
+                                    <div class="form-row">
+                                        <input type="submit" class="button border margin-top-5" name="login" value="Login" />
+                                        <div class="checkboxes margin-top-10">
+                                            <input id="remember-me" type="checkbox" name="check">
+                                            <label for="remember-me">Remember Me</label>
                                         </div>
+                                    </div>
 
-                                    </form>
-                                </div>
+                                </form>
+                            </div>
 
-                                <!-- Register -->
-                                <div class="tab-content" id="tab2" style="display: none;">
+                            <!-- Register -->
+                            <div class="tab-content" id="tab2" style="display: none;">
 
-                                    <form method="post" class="register">
+                                <form method="post" class="register">
 
-                                        <p class="form-row form-row-wide">
-                                            <label for="username2">Username:
+                                    <p class="form-row form-row-wide">
+                                        <label for="username2">Username:
 									<i class="im im-icon-Male"></i>
 									<input type="text" class="input-text" name="username" id="username2" value="" />
 								</label>
-                                        </p>
+                                    </p>
 
-                                        <p class="form-row form-row-wide">
-                                            <label for="email2">Email Address:
+                                    <p class="form-row form-row-wide">
+                                        <label for="email2">Email Address:
 									<i class="im im-icon-Mail"></i>
 									<input type="text" class="input-text" name="email" id="email2" value="" />
 								</label>
-                                        </p>
+                                    </p>
 
-                                        <p class="form-row form-row-wide">
-                                            <label for="password1">Password:
+                                    <p class="form-row form-row-wide">
+                                        <label for="password1">Password:
 									<i class="im im-icon-Lock-2"></i>
 									<input class="input-text" type="password" name="password1" id="password1"/>
 								</label>
-                                        </p>
+                                    </p>
 
-                                        <p class="form-row form-row-wide">
-                                            <label for="password2">Repeat Password:
+                                    <p class="form-row form-row-wide">
+                                        <label for="password2">Repeat Password:
 									<i class="im im-icon-Lock-2"></i>
 									<input class="input-text" type="password" name="password2" id="password2"/>
 								</label>
-                                        </p>
+                                    </p>
 
-                                        <input type="submit" class="button border fw margin-top-10" name="register" value="Register" />
+                                    <input type="submit" class="button border fw margin-top-10" name="register" value="Register" />
 
-                                    </form>
-                                </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Sign In Popup / End -->
+
+            </div>
+    </div>
+    <!-- Header / End -->
+
+    </header>
+    <div class="clearfix"></div>
+    <!-- Header Container / End -->
+
+
+    <!-- Slider
+================================================== -->
+    <div class="listing-slider mfp-gallery-container margin-bottom-0">
+        <a href="images/single-listing-05a.jpg" data-background-image="images/single-listing-05a.jpg" class="item mfp-gallery" title="Title 1"></a>
+        <a href="images/single-listing-05b.jpg" data-background-image="images/single-listing-05b.jpg" class="item mfp-gallery" title="Title 3"></a>
+        <a href="images/single-listing-05c.jpg" data-background-image="images/single-listing-05c.jpg" class="item mfp-gallery" title="Title 2"></a>
+        <a href="images/single-listing-05d.jpg" data-background-image="images/single-listing-05d.jpg" class="item mfp-gallery" title="Title 4"></a>
+    </div>
+
+
+    <!-- Content
+================================================== -->
+    <div class="container">
+        <div class="row sticky-wrapper">
+            <div class="col-lg-8 col-md-8 padding-right-30">
+
+                <!-- Titlebar -->
+                <div id="titlebar" class="listing-titlebar">
+                    <div class="row">
+
+                        <div class="col-lg-2">
+                            <div class="">
+                                <img src="images/listing-item-05.jpg" style="border-radius: 50%; height: 100px; width: 110px;" class="img-fluid" alt="">
+
 
                             </div>
                         </div>
-                    </div>
-                    <!-- Sign In Popup / End -->
-
-                </div>
-            </div>
-            <!-- Header / End -->
-
-        </header>
-        <div class="clearfix"></div>
-        <!-- Header Container / End -->
-
-
-        <!-- Slider
-================================================== -->
-        <div class="listing-slider mfp-gallery-container margin-bottom-0">
-            <a href="images/single-listing-05a.jpg" data-background-image="images/single-listing-05a.jpg" class="item mfp-gallery" title="Title 1"></a>
-            <a href="images/single-listing-05b.jpg" data-background-image="images/single-listing-05b.jpg" class="item mfp-gallery" title="Title 3"></a>
-            <a href="images/single-listing-05c.jpg" data-background-image="images/single-listing-05c.jpg" class="item mfp-gallery" title="Title 2"></a>
-            <a href="images/single-listing-05d.jpg" data-background-image="images/single-listing-05d.jpg" class="item mfp-gallery" title="Title 4"></a>
-        </div>
-
-
-        <!-- Content
-================================================== -->
-        <div class="container">
-            <div class="row sticky-wrapper">
-                <div class="col-lg-8 col-md-8 padding-right-30">
-
-                    <!-- Titlebar -->
-                    <div id="titlebar" class="listing-titlebar">
-                        <div class="row">
-
-                            <div class="col-lg-2">
-                                <div class="">
-                                    <img src="images/listing-item-05.jpg" style="border-radius: 50%; height: 100px; width: 110px;" class="img-fluid" alt="">
-
-
-                                </div>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="listing-titlebar-title">
-                                    <h2>Nombre
-                                        <!-- <span class="listing-tag">Eat & Drink</span> --></h2>
-                                    <span>
+                        <div class="col-lg-10">
+                            <div class="listing-titlebar-title">
+                                <h2>Nombre
+                                    <!-- <span class="listing-tag">Eat & Drink</span> --></h2>
+                                <span>
                                                             <a href="#listing-location" class="listing-address">
                                                             <i class="fa fa-map-marker"></i>
                                                                 Ubicacion
                                                               </a>
                                                          </span>
-                                    <div class="star-rating" data-rating="5">
-                                        <div class="rating-counter"><a href="#listing-reviews">(numero de vistas)</a></div>
-                                    </div>
+                                <div class="star-rating" data-rating="5">
+                                    <div class="rating-counter"><a href="#listing-reviews">(numero de vistas)</a></div>
                                 </div>
-                                <div class="listing-links-container">
+                            </div>
+                            <div class="listing-links-container">
 
-                                    <ul class="listing-links contact-links">
-                                        <li><a href="tel:12-345-678" class="listing-links"><i class="fa fa-phone"></i> +12 345 6578</a></li>
-                                        <li><a href="mailto:mail@example.com" class="listing-links"><i class="fa fa-envelope-o"></i> mail@example.com</a>
-                                        </li>
-                                        <li><a href="#" target="_blank" class="listing-links"><i class="fa fa-link"></i> www.example.com</a></li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-
-                                    <ul class="listing-links">
-                                        <li><a href="#" target="_blank" class="listing-links-fb"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-                                        <li><a href="#" target="_blank" class="listing-links-yt"><i class="fa fa-youtube-play"></i> YouTube</a></li>
-                                        <li><a href="#" target="_blank" class="listing-links-ig"><i class="fa fa-instagram"></i> Instagram</a></li>
-                                        <li><a href="#" target="_blank" class="listing-links-tt"><i class="fa fa-twitter"></i> Twitter</a></li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-
-                                </div>
+                                <ul class="listing-links contact-links">
+                                    <li><a href="tel:12-345-678" class="listing-links"><i class="fa fa-phone"></i> +12 345 6578</a></li>
+                                    <li><a href="mailto:mail@example.com" class="listing-links"><i class="fa fa-envelope-o"></i> mail@example.com</a>
+                                    </li>
+                                    <li><a href="#" target="_blank" class="listing-links"><i class="fa fa-link"></i> www.example.com</a></li>
+                                </ul>
                                 <div class="clearfix"></div>
+
+                                <ul class="listing-links">
+                                    <li><a href="#" target="_blank" class="listing-links-fb"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                                    <li><a href="#" target="_blank" class="listing-links-yt"><i class="fa fa-youtube-play"></i> YouTube</a></li>
+                                    <li><a href="#" target="_blank" class="listing-links-ig"><i class="fa fa-instagram"></i> Instagram</a></li>
+                                    <li><a href="#" target="_blank" class="listing-links-tt"><i class="fa fa-twitter"></i> Twitter</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+
                             </div>
-
-
+                            <div class="clearfix"></div>
                         </div>
 
 
-
                     </div>
-                    <div class="main-search-inner" style="padding-top: 10rem;">
 
-                        <div class="container">
-                            <!-- Features Categories -->
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <h5 class="highlighted-categories-headline">Secciones relacionadas</h5>
 
-                                    <div class="highlighted-categories">
-                                        <!-- Box -->
-                                        <a href="listings-list-with-sidebar.html" class="highlighted-category" style="background-color: crimson !important;">
-                                            <i class="im im-icon-Talk-Man"></i>
-                                            <h4>Profecionales</h4>
-                                        </a>
-                                        <a href="listings-list-with-sidebar.html" class="highlighted-category" style="background-color: rgb(41, 148, 255) !important;">
-                                            <i class="im im-icon-First-Aid"></i>
-                                            <h4>enfermedades</h4>
-                                        </a>
 
-                                        <!-- Box -->
-                                        <a href="listings-list-full-width.html" class="highlighted-category" style="background-color: rgb(251, 255, 41) !important;">
-                                            <i class="im im-icon-Handshake"></i>
-                                            <h4>Servicios</h4>
-                                        </a>
+                </div>
+                <div class="main-search-inner" style="padding-top: 10rem;">
 
-                                        <!-- Box -->
-                                        <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(41, 255, 120) !important;">
-                                            <i class="im im-icon-Shopping-Bag"></i>
-                                            <h4>Tiendas</h4>
-                                        </a>
+                    <div class="container">
+                        <!-- Features Categories -->
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="highlighted-categories-headline">Secciones relacionadas</h5>
 
-                                        <!-- Box -->
-                                        <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(255, 152, 41) !important;">
-                                            <i class="im im-icon-Hospital-2"></i>
-                                            <h4>Farmacias</h4>
-                                        </a>
-                                        <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(255, 41, 209) !important;">
-                                            <i class="im im-icon-Hospital"></i>
-                                            <h4>Laboratorios</h4>
-                                        </a>
-                                        <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(127, 41, 255) !important;">
-                                            <i class="im im-icon-Safety-PinClose"></i>
-                                            <h4>Seguros</h4>
-                                        </a>
-                                    </div>
+                                <div class="highlighted-categories">
+                                    <!-- Box -->
+                                    <a href="listings-list-with-sidebar.html" class="highlighted-category" style="background-color: crimson !important;">
+                                        <i class="im im-icon-Talk-Man"></i>
+                                        <h4>Profecionales</h4>
+                                    </a>
+                                    <a href="listings-list-with-sidebar.html" class="highlighted-category" style="background-color: rgb(41, 148, 255) !important;">
+                                        <i class="im im-icon-First-Aid"></i>
+                                        <h4>enfermedades</h4>
+                                    </a>
 
+                                    <!-- Box -->
+                                    <a href="listings-list-full-width.html" class="highlighted-category" style="background-color: rgb(251, 255, 41) !important;">
+                                        <i class="im im-icon-Handshake"></i>
+                                        <h4>Servicios</h4>
+                                    </a>
+
+                                    <!-- Box -->
+                                    <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(41, 255, 120) !important;">
+                                        <i class="im im-icon-Shopping-Bag"></i>
+                                        <h4>Tiendas</h4>
+                                    </a>
+
+                                    <!-- Box -->
+                                    <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(255, 152, 41) !important;">
+                                        <i class="im im-icon-Hospital-2"></i>
+                                        <h4>Farmacias</h4>
+                                    </a>
+                                    <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(255, 41, 209) !important;">
+                                        <i class="im im-icon-Hospital"></i>
+                                        <h4>Laboratorios</h4>
+                                    </a>
+                                    <a href="listings-half-screen-map-list.html" class="highlighted-category" style="background-color: rgb(127, 41, 255) !important;">
+                                        <i class="im im-icon-Safety-PinClose"></i>
+                                        <h4>Seguros</h4>
+                                    </a>
                                 </div>
-                            </div>
-                            <!-- Featured Categories - End -->
 
+                            </div>
                         </div>
+                        <!-- Featured Categories - End -->
 
                     </div>
 
-                    <!-- Listing Nav -->
+                </div>
+
+                <!-- Listing Nav -->
+            </div>
+
+
+            <!-- Sidebar
+		================================================== -->
+            <div class="col-lg-4 col-md-4 margin-top-75 sticky">
+                <div class="boxed-widget opening-hours margin-top-35">
+                    <div class="listing-badge now-open">Visitanos</div>
+                    <h3><i class="sl sl-icon-clock"></i> Horarios</h3>
+                    <ul>
+                        <li>Lunes <span>9 AM - 5 PM</span></li>
+                        <li>Martes <span>9 AM - 5 PM</span></li>
+                        <li>Miercoles <span>9 AM - 5 PM</span></li>
+                        <li>Jueves <span>9 AM - 5 PM</span></li>
+                        <li>Viernes <span>9 AM - 5 PM</span></li>
+                        <li>Sabado <span>9 AM - 3 PM</span></li>
+                        <li>Domingo <span>Closed</span></li>
+                    </ul>
                 </div>
 
 
-                <!-- Sidebar
-		================================================== -->
-                <div class="col-lg-4 col-md-4 margin-top-75 sticky">
-                    <div class="boxed-widget opening-hours margin-top-35">
-                        <div class="listing-badge now-open">Visitanos</div>
-                        <h3><i class="sl sl-icon-clock"></i> Horarios</h3>
-                        <ul>
-                            <li>Lunes <span>9 AM - 5 PM</span></li>
-                            <li>Martes <span>9 AM - 5 PM</span></li>
-                            <li>Miercoles <span>9 AM - 5 PM</span></li>
-                            <li>Jueves <span>9 AM - 5 PM</span></li>
-                            <li>Viernes <span>9 AM - 5 PM</span></li>
-                            <li>Sabado <span>9 AM - 3 PM</span></li>
-                            <li>Domingo <span>Closed</span></li>
-                        </ul>
-                    </div>
-
-
-                    <!-- Verified Badge
+                <!-- Verified Badge
                     <div class="verified-badge with-tip" data-tip-content="Listing has been verified and belongs the business owner or manager.">
                         <i class="sl sl-icon-check"></i> Verified Listing
                     </div>
                      -->
-                    <!-- Message Vendor 
+                <!-- Message Vendor 
                     <div id="booking-widget-anchor" class="boxed-widget booking-widget message-vendor margin-top-35">
                         <h3><i class="fa fa-envelope-o"></i> Message Vendor</h3>
                         <div class="row with-forms  margin-top-0">
@@ -458,7 +525,7 @@
                             </div>
                             -->
 
-                    <!-- Preferred Contact Methos Radios 
+                <!-- Preferred Contact Methos Radios 
                             <div class="col-lg-12">
                                 <div class="preferred-contact-method">
                                     <h5>Preferred contact method</h5>
@@ -479,34 +546,34 @@
                             </div>
                             -->
 
-                </div>
-
-                <!-- Recaptcha Holder
-                <div class="captcha-holder">
-                     -->
-                <!-- Recaptcha goes here -->
             </div>
 
+            <!-- Recaptcha Holder
+                <div class="captcha-holder">
+                     -->
+            <!-- Recaptcha goes here -->
+        </div>
 
 
-            <!-- Book Now 
+
+        <!-- Book Now 
                 <a href="#" class="button book-now fullwidth margin-top-5">Request Pricing</a>
                 -->
-        </div>
-        <!-- Book Now / End -->
+    </div>
+    <!-- Book Now / End -->
 
 
-        <!-- Opening Hours -->
+    <!-- Opening Hours -->
 
-        <!-- Opening Hours / End -->
-
-
-        <!--aqui se mostrara toda la pantalla -->
-
-        <!-- Contact / End-->
+    <!-- Opening Hours / End -->
 
 
-        <!-- Share / Like -->
+    <!--aqui se mostrara toda la pantalla -->
+
+    <!-- Contact / End-->
+
+
+    <!-- Share / Like -->
 
 
     </div>
