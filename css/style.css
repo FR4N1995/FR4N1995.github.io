@@ -20216,7 +20216,7 @@ body .category-box-btn:hover {
 
 .simple-slick-carousel {
     height: auto;
-    width: 1200px;
+    width: calc(100% + 30px);
     left: -10px;
 }
 
@@ -21866,7 +21866,7 @@ h4 span.headline-detail {
     }
     .simple-slick-carousel.slick-dotted.slick-slider {
         margin-bottom: 0;
-        width: 100%;
+        width: 1200px;
         left: 0;
     }
     .icon-box-2.with-line::before {
