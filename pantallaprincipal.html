@@ -12,6 +12,9 @@
 ================================================== -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main-color.css" id="colors">
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/owl.carousel.min.css">
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/owl.theme.default.min.css">
+
 
 </head>
 
@@ -475,11 +478,8 @@
 
 
 
-
-
-        <!--dentro-->
-        <div class="simple-slick-carousel">
-            <div class="">
+        <div class="owl-carousel">
+            <div>
                 <div class=" carousel-item parallax" style="width: 1200px !important;" data-background="images/slider-bg-02.jpg" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
 
                     <!-- Infobox -->
@@ -501,7 +501,7 @@
 
                 </div>
             </div>
-            <div class="">
+            <div>
                 <div class=" carousel-item parallax" style="width: 1200px !important;" data-background="images/slider-bg-02.jpg" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
 
                     <!-- Infobox -->
@@ -510,7 +510,7 @@
 
                             <div class="row">
                                 <div class="col-lg-12 col-sm-12">
-                                    <h2>Streamline Your Business</h2>
+                                    <h2>Ejemplo</h2>
                                     <p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
                                     <a href="listings-list-with-sidebar.html" class="button margin-top-25">Get Started</a>
                                 </div>
@@ -523,95 +523,11 @@
 
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="parallax" data-background="images/slider-bg-02.jpg" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
 
-                    <!-- Infobox -->
-                    <div class="text-content white-font">
-                        <div class="container">
-
-                            <div class="row">
-                                <div class="col-lg-12 col-sm-12">
-                                    <h2>Streamline Your Business</h2>
-                                    <p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
-                                    <a href="listings-list-with-sidebar.html" class="button margin-top-25">Get Started</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Infobox / End -->
-
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="parallax" data-background="images/slider-bg-02.jpg" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
-
-                    <!-- Infobox -->
-                    <div class="text-content white-font">
-                        <div class="container">
-
-                            <div class="row">
-                                <div class="col-lg-12 col-sm-12">
-                                    <h2>Streamline Your Business</h2>
-                                    <p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
-                                    <a href="listings-list-with-sidebar.html" class="button margin-top-25">Get Started</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Infobox / End -->
-
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="parallax" data-background="images/slider-bg-02.jpg" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
-
-                    <!-- Infobox -->
-                    <div class="text-content white-font">
-                        <div class="container">
-
-                            <div class="row">
-                                <div class="col-lg-12 col-sm-12">
-                                    <h2>Streamline Your Business</h2>
-                                    <p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
-                                    <a href="listings-list-with-sidebar.html" class="button margin-top-25">Get Started</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Infobox / End -->
-
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="parallax" data-background="images/slider-bg-02.jpg" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
-
-                    <!-- Infobox -->
-                    <div class="text-content white-font">
-                        <div class="container">
-
-                            <div class="row">
-                                <div class="col-lg-12 col-sm-12">
-                                    <h2>Streamline Your Business</h2>
-                                    <p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
-                                    <a href="listings-list-with-sidebar.html" class="button margin-top-25">Get Started</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Infobox / End -->
-
-                </div>
-            </div>
         </div>
+
+        <!--dentro-->
+
 
 
 
@@ -1023,6 +939,32 @@
             startDelay: 1000,
             loop: true,
             showCursor: true
+        });
+    </script>
+
+    <!--Scrip para el carrucel de los banners-->
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false
+                    }
+                }
+            });
         });
     </script>
 
