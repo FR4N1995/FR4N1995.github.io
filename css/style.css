@@ -410,7 +410,7 @@ header.fullwidth .container {
 
 /* Sticky header styles */
 
-#header.cloned #logodos img {
+#header.cloned #logo img {
     transform: translate3d(0, 0, 0);
     max-width: 120px;
     margin-top: 1px;
